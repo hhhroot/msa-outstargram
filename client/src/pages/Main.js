@@ -5,7 +5,7 @@ function Main() {
     <div>
       <div id='header'>
         <div id='header_container'>
-          <div id='logo'>outstargram</div>
+          <div className='logo'>outstargram</div>
           <div id='search'></div>
           <div id='menu'>
             <div className='icon' style={{backgroundImage: 'url(/icons/home-2.png)'}}></div>
