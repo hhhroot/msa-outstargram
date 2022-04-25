@@ -169,7 +169,7 @@
   width: 12px;
   height: 12px;
   background-size: cover;
-  background-image: url('../public/icons/heart-2.png');
+  background-image: url('../../public/icons/heart-2.png');
 }
 
 .comment_container {
