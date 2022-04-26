@@ -9,24 +9,38 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import json
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# custom
+
+AUTH_USER_MODEL = 'main.User'
+SERVER_ROOT = BASE_DIR.parent
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(SERVER_ROOT, '.media')
+
+SECRETS_DIR = os.path.join(SERVER_ROOT, '.secrets')
+SECRETS_JSON = os.path.join(SECRETS_DIR, 'secrets.json')
+
+SECRET = json.load(open(SECRETS_JSON))
+
+os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true" # for jupyter
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3%fx$531(y_g02dl35zv=l=vp7s9vpuux4ps0#n51(tg36uzwc'
+SECRET_KEY = SECRET['DJANGO_SECRET_KEY_MEMBER']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -37,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -69,17 +85,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': SECRET['DB_NAME'],
+        'USER': SECRET['DB_USER'],
+        'PASSWORD': SECRET['DB_PASSWORD'],
+        'HOST': SECRET['DB_HOST'],
+        'PORT': SECRET['DB_PORT'],
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -99,18 +117,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -121,3 +137,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
