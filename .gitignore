@@ -1,3 +1,8 @@
+# custom
+.media
+.secrets
+migrations/
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/react,macos,windows,visualstudiocode,git,visualstudio,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=react,macos,windows,visualstudiocode,git,visualstudio,node
