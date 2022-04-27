@@ -1,0 +1,111 @@
+.signup_login_body {
+  background-color: #f4f4f4;
+  height: 90vh;
+  padding-top: 70px;
+}
+
+.signup_login_container {
+  background-color: #fff;
+  padding: 40px;
+  width: 350px;
+  margin: 0 auto;
+  border: 1px solid #d1cece;
+  margin-bottom: 10px;
+}
+
+.login_content {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 10px 0 15px 0;
+  color: #a5a1a1;
+  text-align: center;
+}
+
+.facebook_login {
+  width: 270px;
+  background-color: rgba(var(--d69,0,149,246));
+  color: #fff;
+  padding: 8px;
+  font-weight: 700;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.signup_login_or_line {
+  width: 105px;
+  height: 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid #d1cece;
+}
+
+.signup_login_or_container {
+  display: flex;
+  margin: 20px 0;
+  width: 100%;
+  justify-content: space-between;
+  color:#a5a1a1;
+  font-weight: 700;
+}
+
+.signup_login_input_container input{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1cece;
+  background-color: #f4f4f4;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.signup_login_input_container button{
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background-color: rgba(var(--d69,0,149,246));
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.signup_login_router_container {
+  padding: 25px 20px;
+  display: flex;
+  background-color: #fff;
+  width: 350px;
+  margin: 0 auto;
+  border: 1px solid #d1cece;
+  justify-content: center;
+}
+
+.signup_login_router_container a{
+  text-decoration: none;
+  color: rgba(var(--d69,0,149,246));
+  font-weight: 700;
+}
+
+.project_detail_container {
+  margin: 20px auto;
+  width: 350px;
+  text-align: center;
+}
+
+.project_detail_container a {
+  display: block;
+  padding: 10px;
+  background-color: #a5a1a1;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.footer {
+  margin: 0 auto;
+  text-align: center;
+  height: 10vh;
+  background-color: #f4f4f4;
+  padding-top: 40px;
+}
