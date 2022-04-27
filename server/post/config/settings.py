@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django_extensions',
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +77,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'posts',
-        'ENFORCE_SCHEMA': True,  # db - model 간의 일치여부 확인
+        # 'ENFORCE_SCHEMA': True,  # db - model 간의 일치여부 확인
         'CLIENT': {
             'host': 'localhost',
             'port': 27017,
