@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 # Create your models here.
@@ -9,6 +10,7 @@ class User(AbstractUser):
     img_profile = models.ImageField('프로필이미지', blank=True, upload_to='users_profile/')
     following = models.ManyToManyField('self', through='Relation', related_name='followers', symmetrical=False)
     posts = ArrayField(models.PositiveBigIntegerField(), blank=True, default=list)
+    phone = PhoneNumberField(unique=True)
 
     def __str__(self):
         return self.name

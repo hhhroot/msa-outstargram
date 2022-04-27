@@ -6,4 +6,11 @@ from main.models import User
 
 @admin.register(User)
 class User(admin.ModelAdmin):
-    pass
+    fieldsets = [
+        (None, {'fields': ['username']}),
+        (None, {'fields': ['name']}),
+        (None, {'fields': ['email']}),
+        (None, {'fields': ['img_profile']}),
+        (None, {'fields': ['phone']}),
+        (None, {'fields': ['password']}),
+    ]
