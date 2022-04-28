@@ -12,6 +12,7 @@ AUTH_PASSWORD_VALIDATORS += []
 INSTALLED_APPS += [
     'django_extensions',
     'main',
+    'rest_framework',
 ]
 
 DATABASES = {
